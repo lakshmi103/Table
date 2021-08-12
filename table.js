@@ -15,23 +15,6 @@ fetch('http://127.0.0.1:5500/table.json').then(
 );
 
 
-function printElement(element){
-    console.log(element)
-    return element
-}
-
-// get the div that will hold the table
-function getTableBodyElement()
-{
-    var tableBody = document.getElementsByClassName("table-body")
-    return tableBody
-}
-// Get the head container
-function getTableHeadElement()
-{
-    var tableBody = document.getElementsByClassName("table-head")
-    return tableBody
-}
 // Get the table container
 function getTableElement()
 {
@@ -40,7 +23,7 @@ function getTableElement()
 }
 
 function generateCellData(element, row){
-    console.log(element)
+    // console.log(element)
     // Create new row data element
     // set that elements text to the appropriate item
     cell = row.insertCell();
@@ -70,12 +53,9 @@ function generateTable(row){
     let table = getTableElement();
     // build header
     if (first == 0){
-        console.log(row)
+        // console.log(row)
         first = 1
         generateHeader(row, table)
-    //get header from doc
-    //add header to doc
-    // header.appendChild(headerData);
     }
     // build rows
     else{
