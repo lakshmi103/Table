@@ -2,19 +2,21 @@ fetch('http://127.0.0.1:5500/table.json').then(
     res=>{
         res.json().then(
             data=>{
-                console.log(data[0]);
-                console.log(data[1]);
-                console.log(data[2]);
-                            
-
-                
+                let count = 0;
+                data.forEach(element => printElement(element))   
             }
         )
     }
-)
+);
+
+
+async function printElement(element){
+    console.log(element)
+}
 
 // get the div that will hold the table
-fucntion getTableElement(){
+function getTableElement()
+{
     var tableBody = document.getElementsByClassName("table-body")
     return tableBody
 }
@@ -33,3 +35,4 @@ function generateRow(data){
         rowContainer.appendChild(rowData)
     }
 }
+
